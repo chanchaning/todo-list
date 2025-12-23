@@ -1,12 +1,15 @@
 import './TodoItem.css';
+import useDeleteInterceptor from '../hooks/useDeleteInterceptor';
 
 const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
+    const deleteWithConfirm = useDeleteInterceptor(onDelete);
+
     const onChangeCheckbox = () => {
         onUpdate(id);
     };
 
     const onClickDelete = () => {
-        onDelete(id);
+        deleteWithConfirm(id);
     };
 
     return (

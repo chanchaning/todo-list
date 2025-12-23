@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header.jsx';
 import Editor from './components/Editor.jsx';
 import List from './components/List.jsx';
+import ConfirmDialog from './components/ConfirmDialog.jsx';
 
 import { useState, useEffect } from 'react';
 
@@ -52,7 +53,7 @@ function App() {
 
     const onDelete = (targetId) => {
         const targetTodo = todos.find((todo) => todo.id === targetId);
-        if (targetTodo && window.confirm('정말 삭제하시겠습니까?')) {
+        if (targetTodo) {
             setTodos(todos.filter((todo) => todo.id !== targetId));
         }
     };
@@ -62,6 +63,7 @@ function App() {
             <Header />
             <Editor onCreate={onCreateTodo} />
             <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+            <ConfirmDialog />
         </div>
     );
 }
