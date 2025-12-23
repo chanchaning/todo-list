@@ -1,0 +1,87 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.TodoItem:last-child {
+    border-bottom: none;
+}
+
+.TodoItem .checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.TodoItem .checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.TodoItem .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.TodoItem .checkbox-wrapper:hover .checkmark {
+    border-color: rgb(37, 147, 255);
+    background-color: #f0f8ff;
+}
+
+.TodoItem .checkbox-wrapper input:checked ~ .checkmark {
+    background-color: rgb(37, 147, 255);
+    border-color: rgb(37, 147, 255);
+}
+
+.TodoItem .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.TodoItem .checkbox-wrapper input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.TodoItem .content {
+    flex: 1;
+}
+
+.TodoItem .content.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.TodoItem .date {
+    font-size: 14px;
+    color: gray;
+}
+
+.TodoItem button {
+    cursor: pointer;
+    color: rgb(236,83,83);
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,68 @@
+.List {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.List > input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding: 15px 0;
+}
+
+.List > input:focus {
+    outline: none;
+    border-bottom: 1px solid rgb(37, 147, 255);
+}
+
+.List .todos_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.List .date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.List .date-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.List .date-header:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.List .date-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.List .date-count {
+    color: gray;
+    font-size: 14px;
+}
+
+.List .collapse-icon {
+    margin-left: auto;
+    color: gray;
+    font-size: 12px;
+}
+
+.List .date-todos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
